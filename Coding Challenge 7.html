@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Coding Challenge 7</title>
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <style>
+            
+             /* Body styling */
+
+            html, body {
+                padding: 0;
+                margin: 0;
+                height: 100%;   
+            }
+
+            /* Navigation Styling */
+
+            .navigation-container {
+                margin: 0;
+                padding: 0;
+                display: block;
+                height: 150px;
+                width: auto;
+                background-color: #d6e852;
+                
+            }
+
+            .navigation-top {
+                display: flex;
+                align-items: center;
+            }
+
+            .navigation-logo img {
+                width: 10vw;
+                height: auto;
+            }
+
+            .navigation-menu {
+                position: absolute;
+                right: 10px;
+            }
+
+            .navigation-menu ul {
+                display: flex;
+                list-style: none;
+            }
+
+            .navigation-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+                padding: 15px;
+            }
+
+            .navigation-menu a:hover {
+                color: rgb(192, 192, 191);
+                border-bottom: 2px solid rgb(192, 192, 191);
+            }
+
+            /* Main Section Styling */
+
+            .main-container {
+                margin: 0;
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                background-color: #103d10;  
+                font-family: "Michroma", sans-serif;
+                color: #d6e852;
+            }
+
+            figure {
+                position: relative;
+            }
+
+            figure img {
+                width: 100%;
+                padding: 10px;
+            }
+
+            figure img:hover {
+                opacity: 0.75;
+                border: 1px solid white;
+            }
+
+            figcaption {
+                width: 100%;
+                text-align: center;
+                background-color: #1e9832;
+                border: 2px solid white;
+                padding: 10px;
+            }
+
+            /* Bottom Section Styling */
+
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 300px;
+                background-color: #1e9832;
+            }
+
+            .section-menu {  
+                margin-left: 100px;
+                margin-top: 50px;
+                width: 300px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .section-menu h4 {
+                padding: 0;
+            }            
+
+            .section-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu a:hover {
+                color: rgb(207, 207, 201);
+                border-bottom: 2px solid rgb(207, 207, 201);
+            }
+
+            .section-info {
+                position: absolute;
+                margin: 0;
+                right: 100px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-info img {
+                width: 10vw;
+                height: auto;
+            }
+
+            /* Footer Styling */
+
+            .footer-container {
+                display: flex;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(6, 70, 143);
+                height: 100px;
+                width: 100%;
+                background-color: #d6e852;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Mobile Screen Size */
+
+            @media (max-width: 1200px) {
+
+            /* Mobile navigation styling */
+
+                .navigation-container {
+                    height: 75px;
+                }
+
+                .navigation-menu a {
+                     font-size: 0.5rem;
+                }
+
+                .navigation-carousel {
+                    width: 200px;
+                }
+
+                .navigation-carousel h4, p {
+                    font-size: 0.5rem;
+                }  
+
+            /* Mobile main section styling */
+
+                .main-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                }
+
+            /* Mobile bottom section styling */
+
+                .section-content {
+                    height: 200px;
+                }
+
+                .section-menu {  
+                    margin-left: 25%;
+                    padding-right: 200px;
+                }
+
+                .section-menu, .section-menu a { 
+                    font-size: 0.5rem;
+                }
+
+                .section-info p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile footer styling */
+
+                .footer-container p {
+                    font-size: 0.5rem;
+                }
+            }
+        
+
+        </style>
+    </head>
+    <body>
+
+        <!--Navigation Section-->
+
+        <nav class="navigation-container">
+            <div class="navigation-top">
+                <div class="navigation-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Section -->
+        
+        <main class="main-container">
+            <div class="main-images">
+                <figure>
+                    <a target="_blank" href="images/house-4028391_1280.jpg"><img src="images/house-4028391_1280.jpg" alt="House"></a>
+                    <figcaption>House on a dune</figcaption>
+                    <a target="_blank" href="images/greece-6773683_1280.jpg"><img src="images/greece-6773683_1280.jpg" alt="Greece"></a>
+                    <figcaption>A cliff side in Greece</figcaption>
+                    <a target="_blank" href="images//mountains-5485678_1280.jpg"><img src="images/mountains-5485678_1280.jpg" alt="Mountains"></a>
+                    <figcaption>Mountains by the water</figcaption>
+                    <a target="_blank" href="images/hut-9582608_1280.jpg"><img src="images/hut-9582608_1280.jpg" alt="Hut"></a>
+                    <figcaption>A woodland hut</figcaption>
+                    <a target="_blank" href="images/mountains-8540699_1280.jpg"><img src="images/mountains-8540699_1280.jpg" alt="Mountains"></a>
+                    <figcaption>Forrset on the mountains</figcaption>
+                </figure>
+            </div>
+            <div class="main-images">
+                <figure>
+                    <a target="_blank" href="images/muhlviertel-7544316_1280.jpg"><img src="images/muhlviertel-7544316_1280.jpg" alt="Misty Valley"></a>
+                    <figcaption>Mist settling on the valley</figcaption>
+                    <a target="_blank" href="images/nature-7152461_1280.jpg"><img src="images/nature-7152461_1280.jpg" alt="Cheery Blossom"></a>
+                    <figcaption>Cherry blossom tree</figcaption>
+                    <a target="_blank" href="images/river-4336788_1280.jpg"><img src="images/river-4336788_1280.jpg" alt="River"></a>
+                    <figcaption>A winding river</figcaption>
+                    <a target="_blank" href="images/trees-7544451_1280.jpg"><img src="images/trees-7544451_1280.jpg" alt="Trees"></a>
+                    <figcaption>Trees</figcaption>
+                    <a target="_blank" href="images/water-8100724_1280.jpg"><img src="images/water-8100724_1280.jpg" alt="Water"></a>
+                    <figcaption>A water vista</figcaption>
+                </figure>
+            </div>
+             <div class="main-images">
+                <figure>
+                    <a target="_blank" href="images/house-4028391_1280.jpg"><img src="images/house-4028391_1280.jpg" alt="House"></a>
+                    <figcaption>House on a dune</figcaption>
+                    <a target="_blank" href="images/greece-6773683_1280.jpg"><img src="images/greece-6773683_1280.jpg" alt="Greece"></a>
+                    <figcaption>A cliff side in Greece</figcaption>
+                    <a target="_blank" href="images//mountains-5485678_1280.jpg"><img src="images/mountains-5485678_1280.jpg" alt="Mountains"></a>
+                    <figcaption>Mountains by the water</figcaption>
+                    <a target="_blank" href="images/hut-9582608_1280.jpg"><img src="images/hut-9582608_1280.jpg" alt="Hut"></a>
+                    <figcaption>A woodland hut</figcaption>
+                    <a target="_blank" href="images/mountains-8540699_1280.jpg"><img src="images/mountains-8540699_1280.jpg" alt="Mountains"></a>
+                    <figcaption>Forrest on the mountains</figcaption>
+                </figure>
+            </div>
+        </main>
+
+        <!-- Bottom Section -->
+
+        <section>
+            <div class="section-content">
+                <div class="section-menu">
+                    <h2> Site Map</h2>
+                    <h4>All our pages</h4>
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="section-info">
+                    <img src="images/Logo.png" alt="Logo">
+                    <p>Tel: 012345678</p>
+                    <p>email: mycompany&#64;example.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+
+        <footer class="footer-container">
+            <p>&copy;mycompanyname all rights reserved 2025</p>
+        </footer>
+    </body>
+</html>

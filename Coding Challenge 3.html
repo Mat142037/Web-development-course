@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Coding Challenge 3</title>
+        <style>
+
+            html, body {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+  
+            }
+
+            /* Navigation Styling */
+
+            .navigation-container {
+                margin: 0;
+                padding: 0;
+                display: block;
+                height: 500px;
+                width: auto;
+                background-color: #d6e852;
+                
+            }
+
+            .navigation-top {
+                display: flex;
+                align-items: center;
+            }
+
+            .navigation-logo img {
+                width: 10vw;
+                height: auto;
+            }
+
+            .navigation-menu {
+                position: absolute;
+                right: 10px;
+            }
+
+            .navigation-menu ul {
+                display: flex;
+                list-style: none;
+            }
+
+            .navigation-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+                padding: 15px;
+            }
+
+            .navigation-menu a:hover {
+                color: rgb(192, 192, 191);
+                border-bottom: 2px solid rgb(192, 192, 191);
+            }
+
+            .navigation-carousel {
+                position: absolute;
+                justify-self: center;
+                width: 500px;
+                overflow-x: auto;
+                scroll-snap-type: x proximity;
+                scroll-behavior: smooth;
+            }
+
+            .navigation-carousel ul {
+                display: flex;
+                list-style: none;
+            }
+
+            .navigation-carousel li {
+                padding: 50px;
+                width: 50px;
+                text-decoration: none;
+                flex: 0 0 100%;
+                flex-shrink: 0;
+                scroll-snap-align: center;
+            }
+
+            .navigation-carousel h4, p {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            /* Main Styling */
+
+            .main-container {
+                background-color: #167226;
+                height: 600px;
+                width: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .main-image {
+                margin-left: 100px;
+                padding-right: 100px;     
+            }
+
+            .main-image img {                
+                left: 50px;
+                width: 40vw;
+                height: auto;
+            }
+
+            .main-content {
+                background-color: #92df9f;
+                text-align: center;
+                width: fit-content;
+                margin-right: 100px;
+            }
+
+            .main-content h2, h4, p {
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(6, 70, 143);
+                padding: 0 20px;
+                font-size: 1rem;
+            }
+
+            .main-button {
+                position: relative;
+                margin: 50px;
+                color: rgb(6, 70, 143);
+                background-color: rgb(20, 205, 238);
+                border: 3px solid black;
+                border-radius: 2px;
+                width: 100px;
+                height: 30px;
+                font-size: 16px;
+            }
+
+            .main-button:hover {
+                background-color: #2c3;
+            }
+
+            .main-button:active {
+                transform: scale(1.5);
+            }
+
+            /* Bottom Section Styling */
+
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 300px;
+                background-color: #1e9832;
+            }
+
+            .section-menu {  
+                margin-left: 100px;
+                margin-top: 50px;
+                width: 300px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .section-menu h4 {
+                padding: 0;
+            }            
+
+            .section-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu a:hover {
+                color: rgb(207, 207, 201);
+                border-bottom: 2px solid rgb(207, 207, 201);
+            }
+
+            .section-info {
+                position: absolute;
+                margin: 0;
+                right: 100px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-info img {
+                width: 10vw;
+                height: auto;
+            }
+
+            /* Footer Styling */
+
+            .footer-container {
+                display: flex;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(6, 70, 143);
+                height: 100px;
+                width: 100%;
+                background-color: #d6e852;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Mobile Screen Size */
+
+            @media screen and (max-width: 1200px) {
+
+            /* Mobile navigation styling */
+
+                .navigation-menu a {
+                     font-size: 0.5rem;
+                }
+
+                .navigation-carousel {
+                    width: 200px;
+                }
+
+                .navigation-carousel h4, p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile main styling */
+
+                .main-container {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .main-content {
+                    margin: 0;
+                }
+
+                .main-button {
+                    width: 80px;
+                    height: 30px;
+                    font-size: 8px;
+                    margin: 10px;
+                }
+
+            /* Mobile bottom section styling */
+
+                .section-content {
+                    height: 200px;
+                }
+
+                .section-menu {  
+                    margin-left: 25%;
+                    padding-right: 200px;
+                }
+
+                .section-menu, .section-menu a { 
+                    font-size: 0.5rem;
+                }
+
+                .section-info p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile footer styling */
+
+                .footer-container p {
+                    font-size: 0.5rem;
+                }  
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!--Navigation Section-->
+
+        <nav class="navigation-container">
+            <div class="navigation-top">
+                <div class="navigation-logo">
+                    <img src="Images/Logo.png" alt="Logo">
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navigation-carousel">
+                <ul>
+                    <li><h4>Title Example 1</h4><p>Example number 1</p></li>
+                    <li><h4>Title Example 2</h4><p>Example number 2</p></li>
+                    <li><h4>Title Example 3</h4><p>Example number 3</p></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Section -->
+
+        <main class="main-container">
+            <div class="main-image">
+                <img src="Images/image1.jpg" alt="computer terminal">
+            </div>
+            <div class="main-content">
+                <h2>Title Example</h2>
+                <h4>Subtitle Example</h4>
+                <p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi. Sem leo tincidunt aliquet semper eu lectus scelerisque quis. Sagittis vivamus mollis nisi mollis enim fermentum laoreet.</p>
+                <button class="main-button">Click here</button>
+            </div>
+        </main>
+
+        <!-- Bottom Section -->
+
+        <section>
+            <div class="section-content">
+                <div class="section-menu">
+                    <h2> Site Map</h2>
+                    <h4>All our pages</h4>
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="section-info">
+                    <img src="Images/Logo.png" alt="Logo">
+                    <p>Tel: 012345678</p>
+                    <p>email: mycompany&#64;example.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+
+        <footer class="footer-container">
+            <p>&copy;mycompanyname all rights reserved 2025</p>
+        </footer>
+    </body>
+</html>

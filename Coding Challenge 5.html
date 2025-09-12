@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Coding Challenge 5</title>
+        <style>
+
+            /* Body styling */
+
+            html, body {
+                padding: 0;
+                margin: 0;
+                height: 100%;   
+            }
+
+            /* Navigation Styling */
+
+            .navigation-container {
+                margin: 0;
+                padding: 0;
+                display: block;
+                height: 150px;
+                width: auto;
+                background-color: #d6e852;
+                
+            }
+
+            .navigation-top {
+                display: flex;
+                align-items: center;
+            }
+
+            .navigation-logo img {
+                width: 10vw;
+                height: auto;
+            }
+
+            .navigation-menu {
+                position: absolute;
+                right: 10px;
+            }
+
+            .navigation-menu ul {
+                display: flex;
+                list-style: none;
+            }
+
+            .navigation-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+                padding: 15px;
+            }
+
+            .navigation-menu a:hover {
+                color: rgb(192, 192, 191);
+                border-bottom: 2px solid rgb(192, 192, 191);
+            }
+
+            /* Main Section Styling */
+
+            .main-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex-grow: 2;
+                flex-basis: auto;
+                background-color: #103d10;
+                justify-content: space-around;
+                align-items: center;
+                padding: 50px 0px;
+                gap: 10px;
+            }
+
+            .main-container img {
+                width: 20vw;
+                height: auto;
+                padding: 5px;
+                vertical-align: middle;
+            }
+
+            .main-container div {
+                flex: 25%;
+                max-width: 25%;
+                margin: 10px;
+                padding: 10px;
+                background-color: #1e9832;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: beige;
+            }
+
+            /* Bottom Section Styling */
+
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 300px;
+                background-color: #1e9832;
+            }
+
+            .section-menu {  
+                margin-left: 100px;
+                margin-top: 50px;
+                width: 300px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .section-menu h4 {
+                padding: 0;
+            }            
+
+            .section-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu a:hover {
+                color: rgb(207, 207, 201);
+                border-bottom: 2px solid rgb(207, 207, 201);
+            }
+
+            .section-info {
+                position: absolute;
+                margin: 0;
+                right: 100px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-info img {
+                width: 10vw;
+                height: auto;
+            }
+
+            /* Footer Styling */
+
+            .footer-container {
+                display: flex;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(6, 70, 143);
+                height: 100px;
+                width: 100%;
+                background-color: #d6e852;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Mobile Screen Size */
+
+            @media (max-width: 1200px) {
+
+            /* Mobile navigation styling */
+
+                .navigation-container {
+                    height: 75px;
+                }
+
+                .navigation-menu a {
+                     font-size: 0.5rem;
+                }
+
+                .navigation-carousel {
+                    width: 200px;
+                }
+
+                .navigation-carousel h4, p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile main section styling */  
+            
+            .main-container h2 {
+                font-size: 0.75rem;
+            }
+
+            /* Mobile bottom section styling */
+
+                .section-content {
+                    height: 200px;
+                }
+
+                .section-menu {  
+                    margin-left: 25%;
+                    padding-right: 200px;
+                }
+
+                .section-menu, .section-menu a { 
+                    font-size: 0.5rem;
+                }
+
+                .section-info p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile footer styling */
+
+                .footer-container p {
+                    font-size: 0.5rem;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!--Navigation Section-->
+
+        <nav class="navigation-container">
+            <div class="navigation-top">
+                <div class="navigation-logo">
+                    <img src="images/Logo.png" alt="Logo">
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Section -->
+        
+        <main class="main-container">
+            <div>
+                <h2>Dog</h2>
+                <p>The dog is a domesticated descendant of the gray wolf</p>
+                <img src="images/dog-1163076_1280.jpg" alt="Dog">
+                <img src="images/animal-4118585_1280.jpg" alt="Dog">
+            </div>
+            <div>
+                <h2>Cat</h2>
+                <p>The cat, also referred to as the domestic cat or house cat, is a small domesticated carnivorous mammal.</p>
+                <img src="images/cat-5183427_1280.jpg" alt="Cat">
+            </div>
+            <div>
+                <h2>Horse</h2>
+                <p>The horse (Equus ferus caballus) is a domesticated, one-toed, hoofed mammal.</p>
+                <img src="images/horse-6724544_1280.jpg" alt="Horse">
+            </div>
+            <div>
+                <h2>Gull</h2>
+                <p>Gulls and seagulls are seabirds of the subfamily Larinae. They are most closely related to terns and skimmers, distantly related to auks, and even more distantly related to waders.</p>
+                <img src="images/gull-5683637_1280.jpg" alt="Gull">             
+            </div>
+            <div>
+                <h2>Fox</h2>
+                <p>Foxes are small-to-medium-sized omnivorous mammals belonging to several genera of the family Canidae.</p>
+                <img src="images/fox-4589927_1280.jpg" alt="Fox">
+            </div>
+            <div>
+                <h2>Lion</h2>
+                <p>The lion is a large cat of the genus Panthera, native to Sub-Saharan Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a dark, hairy tuft at the tip of its tail.</p>
+                <img src="images/lion-7148207_1280.jpg" alt="Lion">              
+            </div>
+            <div>
+                <h2>Lizard</h2>
+                <p>Lizard is the common name used for all squamate reptiles other than snakes (and to a lesser extent amphisbaenians), encompassing over 7,000 species,ranging across all continents except Antarctica, as well as most oceanic island chains.</p>
+                <img src="images/lizard-8787888_1280.jpg" alt="Lizard">                
+            </div>
+            <div>
+                <h2>Wolf</h2>
+                <p>The wolf, also known as the grey wolf or gray wolf, is a canine native to Eurasia and North America.</p>
+                <img src="images/wolf-142173_1280.jpg" alt="Wolf">                
+            </div>
+            <div>
+                <h2>Birds</h2>
+                <p>Birds are a group of warm-blooded vertebrates constituting the class Aves, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton.</p>
+                <img src="images/birds-5035164_1280.jpg" alt="Birds">
+            </div>
+            <div>
+                <h2>Woodpecker</h2>
+                <p>Woodpeckers are part of the bird family Picidae, which also includes the piculets, wrynecks and sapsuckers.</p>
+                <img src="images/pic-wood-5295949_1280.jpg" alt="Woodpecker"> 
+            </div>
+        </main>
+
+        <!-- Bottom Section -->
+
+        <section>
+            <div class="section-content">
+                <div class="section-menu">
+                    <h2> Site Map</h2>
+                    <h4>All our pages</h4>
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="section-info">
+                    <img src="images/Logo.png" alt="Logo">
+                    <p>Tel: 012345678</p>
+                    <p>email: mycompany&#64;example.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+
+        <footer class="footer-container">
+            <p>&copy;mycompanyname all rights reserved 2025</p>
+        </footer>
+    </body>
+</html>

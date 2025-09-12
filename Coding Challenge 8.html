@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>Coding Challenge 8</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/album/"
+    />
+    <script src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8-examples\assets\js\color-modes.js"></script>
+    <link href="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8-examples\assets\dist\css\bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <script src="https://kit.fontawesome.com/d6893f0b46.js" crossorigin="anonymous"></script>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+      .list-unstyled a {
+        color: white;
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <header data-bs-theme="dark">
+      <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4>My Album</h4>
+              <p class="text-body-secondary">
+                Below is an album of my favourite holiday destinations, with links to top 10 things to do in each loaction.
+                You can also few pictures on links to my social media and view hotels on google maps so you can organise 
+                your next holiday!
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4>Contact and links</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://outlook.live.com/" target="_blank">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              aria-hidden="true"
+              class="me-2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+              ></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+            <strong>Album</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">My Favourite Destinations</h1>
+            <p class="lead text-body-secondary">
+              My name is Matt and this collection are my favourite destinations ranked in no particuar order.
+              I have been travelling for 25 years and have experienced some amazing destinations i wanted to share with you!
+            </p>
+            <p>
+              <a href="https://en-gb.facebook.com/" target="_blank" class="btn btn-primary my-2">Click to see my profile</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\bruges.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                   Bruges
+                  </h2>
+                  <p class="card-text">
+                   Bruges is a town in Flanders, the northern part of Belgium. 
+                   Relatively cosmopolitan and bourgeois given its compact size, it is one of the best preserved pre-motorized cities in Europe 
+                   and offers the kind of charms rarely available elsewhere. Bruges is a postcard-perfect stop on any tour of Europe.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                        <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/XS7WJw11sn64Dkvt5" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\sydney.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Sydney
+                  </h2>
+                  <p class="card-text">
+                  Sydney is the largest, most populated, oldest, and most cosmopolitan city in Australia. 
+                  Brimming with history, nature, culture, art, fashion, cuisine, and design, Sydney is set next to miles of ocean coastline and sandy surf beaches. 
+                  The city is also home to the Sydney Opera House and the Sydney Harbour Bridge, two of the most iconic structures on this planet.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/TTUdkDz5sgRhQrV36" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\tokyo.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Tokyo
+                  </h2>
+                  <p class="card-text">
+                  Tokyo is the capital of Japan. With over 13 million people within the city limits alone, Tokyo is the core of the most populated 
+                  urban area in the world, Tokyo Metropolis (which has a population of over 37 million people). 
+                  This huge, wealthy, and fascinating metropolis has something for everyone: be it high-tech visions of the future, or nostalgic glimpses of old Japan.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                       <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/vDrktejoZk6RWGL3A" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\singapore.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Singapore
+                  </h2>
+                  <p class="card-text">
+                 Singapore is a city-state in Southeast Asia that became independent from the British in 1965 and is now one of the world’s leading economic centres in shipping and banking. Combining the skyscrapers and subways of a modern, affluent city with a mix of Chinese, Malay, Arab, and Indian 
+                 influences alongside a tropical climate, tasty food from hawker centres, numerous shopping malls, and a vibrant nightlife scene, this Garden City makes a great stopover or springboard into the region.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/Y5Lquqr6EtS6jwPu9" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\rekyjavik.jpg">
+                <div class="card-body">
+                 <h2 class="card-text">
+                  Reykjavik
+                  </h2>
+                  <p class="card-text">
+                 Reykjavik is the capital and largest city of Iceland with over 130,000 inhabitants and with an urban area population of around 240,000, it is the home of the vast majority of Iceland's inhabitants. It is the centre of culture and life of the Icelandic people as well as a focal point of tourism in Iceland. The city itself is spread out, with sprawling suburbs. 
+                 The city centre, however, is a very small area characterized by eclectic and colourful houses, with good shopping, dining, and drinking.
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/kozrpTTgmxLtFzBp8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\copenhagen.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Copenhagen
+                  </h2>
+                  <p class="card-text">
+                 Copenhagen is the capital of Denmark and what a million Danes call home. This "friendly old girl of a town" is big enough to be a metropolis with shopping, culture and nightlife par excellence, yet still small enough to be intimate, safe and easy to navigate. 
+                 Overlooking the Øresund strait with Sweden just minutes away, it is a cultural and geographic link between mainland Europe and Scandinavia.
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                       <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/iRNnEBy64R8MJeed6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\malta.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Malta
+                  </h2>
+                  <p class="card-text">
+                  Malta is a small, island country in the Mediterranean Sea that lies south of the island of Sicily, Italy.
+                  Malta is an archipelago, but only the three largest islands of Malta, Gozo and Comino are inhabited.
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/nbpFu2R2Kmu6GRGQ9" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>           
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\san francisco.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  San Francisco
+                  </h2>
+                  <p class="card-text">
+                  San Francisco is a major city in California, the centerpiece of the Bay Area, well-known for its liberal community, hilly terrain, Victorian architecture, scenic beauty, summer fog, and great ethnic and cultural diversity. 
+                  These are only a few of the aspects of the city that make San Francisco one of the most visited cities in the world. The city name can be shortened to SF.
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/zds2nEbY1pbpGMZJ7" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src="C:\Users\miff1\OneDrive\Desktop\bootstrap-5.3.8\images\istanbul.jpg">
+                <div class="card-body">
+                  <h2 class="card-text">
+                  Istanbul
+                  </h2>
+                  <p class="card-text">
+                  Istanbul is Turkey's most populous city as well as its cultural and financial hub. Located on both sides of the Bosphorus, the narrow strait between the Black Sea and the Marmara Sea, Istanbul bridges Asia and Europe both physically and culturally. 
+                  Istanbul's population is estimated to be between 16 and 19 million people, making it also one of the largest cities in Europe and the world.
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        Gallery
+                      </button>
+                      <a class="btn btn-sm btn-outline-secondary" href="https://maps.app.goo.gl/5EKfMK6KorwrGQv28" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1"><a href="#">Back to top</a></p>
+        <p class="mb-1">
+          This album is &copy; Matthew Smith
+        </p>
+      </div>
+    </footer>
+    <script
+      src="../assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+  </body>
+</html>

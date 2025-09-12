@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Coding Challenge 4</title>
+        <style>
+
+            /* Body styling */
+
+            html, body {
+                padding: 0;
+                margin: 0;
+                height: 100%;   
+            }
+
+            /* Navigation Styling */
+
+            .navigation-container {
+                margin: 0;
+                padding: 0;
+                display: block;
+                height: 150px;
+                width: auto;
+                background-color: #d6e852;
+                
+            }
+
+            .navigation-top {
+                display: flex;
+                align-items: center;
+            }
+
+            .navigation-logo img {
+                width: 10vw;
+                height: auto;
+            }
+
+            .navigation-menu {
+                position: absolute;
+                right: 10px;
+            }
+
+            .navigation-menu ul {
+                display: flex;
+                list-style: none;
+            }
+
+            .navigation-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+                padding: 15px;
+            }
+
+            .navigation-menu a:hover {
+                color: rgb(192, 192, 191);
+                border-bottom: 2px solid rgb(192, 192, 191);
+            }
+
+            /* Form Styling */
+
+            .main-form-container {
+                margin: 0;
+                padding: 0;
+                background-color: #167226;
+                border: 1px solid #167226;
+                
+            }
+
+            .form-container {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 10px;
+                background-color: #92df9f;
+                border-radius: 5px;
+                box-shadow: 0, 2px, 4px rgba(0, 0, 0, 0.2);
+                
+            }
+
+            .form-group {
+                margin: 10px;
+                padding: 5px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+                width: 100%;
+                padding: 5px;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                font-size: 10px;
+            }
+
+            button {
+                margin-left: 300px;
+                width: 200px;
+                height: 50px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+            }
+
+            input:valid, textarea:valid, select:valid {
+                border-color: #28a745;
+            }
+
+            input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
+                border-color: #dc3545;
+            }
+
+            .error-message {
+                color: #dc3545;
+                font-size: 0.875rem;
+                margin-top: 0.25rem;
+            }
+
+            /* Bottom Section Styling */
+
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 300px;
+                background-color: #1e9832;
+            }
+
+            .section-menu {  
+                margin-left: 100px;
+                margin-top: 50px;
+                width: 300px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .section-menu h4 {
+                padding: 0;
+            }            
+
+            .section-menu a {
+                text-decoration: none;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-menu a:hover {
+                color: rgb(207, 207, 201);
+                border-bottom: 2px solid rgb(207, 207, 201);
+            }
+
+            .section-info {
+                position: absolute;
+                margin: 0;
+                right: 100px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                color: rgb(6, 70, 143);
+            }
+
+            .section-info img {
+                width: 10vw;
+                height: auto;
+            }
+
+            /* Footer Styling */
+
+            .footer-container {
+                display: flex;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(6, 70, 143);
+                height: 100px;
+                width: 100%;
+                background-color: #d6e852;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Mobile Screen Size */
+
+            @media (max-width: 1200px) {
+
+            /* Mobile navigation styling */
+
+                .navigation-container {
+                    height: 75px;
+                }
+
+                .navigation-menu a {
+                     font-size: 0.5rem;
+                }
+
+                .navigation-carousel {
+                    width: 200px;
+                }
+
+                .navigation-carousel h4, p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile form styling */
+
+                label {
+                    font-size: 0.75rem;
+                }
+
+                button {
+                margin-left: 125px;
+                }
+
+            /* Mobile bottom section styling */
+
+                .section-content {
+                    height: 200px;
+                }
+
+                .section-menu {  
+                    margin-left: 25%;
+                    padding-right: 200px;
+                }
+
+                .section-menu, .section-menu a { 
+                    font-size: 0.5rem;
+                }
+
+                .section-info p {
+                    font-size: 0.5rem;
+                }
+
+            /* Mobile footer styling */
+
+                .footer-container p {
+                    font-size: 0.5rem;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!--Navigation Section-->
+
+        <nav class="navigation-container">
+            <div class="navigation-top">
+                <div class="navigation-logo">
+                    <img src="Images/Logo.png" alt="Logo">
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Form Section -->
+
+         <main class="main-form-container">
+            <form class="form-container" action="#" method="post">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required minlength="2">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname</label>
+                    <input type="text" id="surname" name="surname" required minlength="2">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Please select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="billing">Billing Inquiry</option>
+                        <option value="other">Other Business</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="10" required minlength="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        Subscribe for our newsletter
+                    </label>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </main>
+
+         <!-- Bottom Section -->
+
+        <section>
+            <div class="section-content">
+                <div class="section-menu">
+                    <h2> Site Map</h2>
+                    <h4>All our pages</h4>
+                    <ul>
+                        <li><a href="Coding Challenge 3.html">Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Purchase</a></li>
+                        <li><a href="Coding Challenge 5.html">Featured</a></li>
+                        <li><a href="Coding Challenge 4.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="section-info">
+                    <img src="Images/Logo.png" alt="Logo">
+                    <p>Tel: 012345678</p>
+                    <p>email: mycompany&#64;example.com</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+
+        <footer class="footer-container">
+            <p>&copy;mycompanyname all rights reserved 2025</p>
+        </footer>
+    </body>
+</html>
