@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Challenge 13</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/d6893f0b46.js" crossorigin="anonymous"></script>
+        <style>
+
+        /* Fonts */
+
+        @font-face {
+            font-family: avro-Reg;
+            src: url(Fonts/Arvo-Regular.ttf);
+        }
+
+        * {
+            font-family: avro-reg, sans-serif;
+        }
+
+        /* Navigation Styling */
+
+            .navigation-container {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                background-color: #b4ee4b;
+            }
+
+            /* Dropdown Button */
+
+            .dropbtn {
+                background-color: #660066;
+                color: white;
+                padding: 16px;
+                font-size: 2vw;
+                border: none;
+                height: 10vh;
+                width: 15vw;
+            }
+
+            .dropbtn button {
+                font-size: 5vw;
+            }
+
+            .menu-container {
+                margin-right: 10vw;
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 15vw;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: #000;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .menu-container:hover .dropdown-content {
+                display: block;
+            }
+
+            .menu-container:hover .dropbtn { 
+                background-color: #B27FB2;
+            }
+
+            /* Search Bar */
+
+            .search-container input {
+                width: 20vw;
+                height: 5vh;
+                border-radius: 10px;
+            }
+
+            .search-container button {
+                height: 50px;
+                width: 70px;
+                border-radius: 80px;
+            }
+
+            /* Logo */
+
+            .logo-container {
+                position: absolute;
+                right: 5px;
+            }
+
+            .logo-container img {
+                width: 10vw;
+            }
+
+        /* Selection Styling */
+
+            .league-select {
+                text-align: center;
+                background-color: #D5F599;
+                padding: 40px;
+            }
+            
+            .dot-badge {
+                height: 50px;
+                width: 50px;
+                border-radius: 2px;
+                padding-right: 60px;
+            }
+
+            .league-select img:hover {
+                transform: scale(1.2);
+            }
+        
+        /* Heading Styling */
+
+            .heading-container {
+                background-image: linear-gradient( to bottom right, #AAC47A, #CCDBAF);
+                margin: 0;
+                padding: 20px;
+            }
+
+            #title {
+                margin-left: 15vw;
+            }
+
+            #content {
+                display: inline-flex;
+                margin-left: 15vw;
+                letter-spacing: 3px;
+            }
+
+            #content img {
+                width: 3vw;
+                margin-right: 5vw;
+            }
+        
+        /* Main Section Styling */
+
+            .main-container {
+                display: flex;
+                flex-wrap: wrap;
+                height: 800px;
+                background-image: url(Images/stadium-77878_1280.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.75;
+                font-weight: 800;
+            }
+
+            /* Fixtures Table Styling */
+
+            .fixtures-container {
+                margin: auto;
+                border: 2px solid #000;
+                border-radius: 10px;
+                padding: 10px;
+                background-color: #DDE7C9;
+            }
+
+            #fixtures td {
+                padding: 5px;
+            }
+
+            /* League Table Styling */
+
+            .leaguetable-container {
+                margin: auto;
+            }
+
+            #league {
+                border-collapse: collapse;
+                border: 1px solid #000;
+                border-radius: 10px;
+                
+            }
+
+            #league td, th {
+                border-bottom: 1px solid #000;
+                border-spacing: 0;
+                background-color: #DDE7C9;
+                padding: 5px;
+                text-align: left;
+            }
+        
+        /* Bottom Section Styling */
+
+            .bottom-section-container {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 50px;
+                background-image: linear-gradient( to bottom right, #AAC47A, #CCDBAF);
+            }
+
+            /* Signup Form Styling */
+
+            .signupform {
+                margin: auto;
+            }
+
+            .signupform h2 {
+                letter-spacing: 3px;
+            }
+
+            .signupform form {
+                border: 1px solid #000;
+                background-color: #DDE7C9;
+                max-width: 600px;
+                padding: 20px;
+            }
+
+            .form input {
+                width: 90%;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .signupform button {
+                font-family: avro-reg, sans-serif;
+                height: 50px;
+                width: 100px;
+                margin-top: 10px;
+            }
+
+            /* iframe Styling */
+
+            .iframe {
+                margin: auto;
+                padding-top: 50px;
+            }
+
+        /* Footer Section Styling */
+
+            .footer-container {
+                height: 50px;
+                text-align: center;
+                background-color: #b4ee4b;
+                padding: 10px;
+            }
+
+        /* Media Styling */
+
+            @media (max-width: 1200px) {
+                * {
+                    font-size: 0.75rem;
+                }
+            
+            iframe {
+                width: 60vw; 
+                height: 40vw;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <!--Navigation Section-->
+    
+        <nav class="navigation-container">
+            <div class="menu-container">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#">Football</a>
+                    <a href="#">Cricket</a>
+                    <a href="#">Rugby Union</a>
+                    <a href="#">Tennis</a>
+                    <a href="#">F1</a>
+                    <a href="#">NFL</a>
+                </div>
+            </div>
+            <div class="search-container">
+                <form action="#">
+                    <input type="text" value="">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="logo-container">
+                <img src="Images/Logo.png" alt="Logo">
+            </div>
+        </nav>
+
+        <!-- Selection Section -->
+
+        <div class="league-select">
+            <a href=""><img class="dot-badge" src="Images/EPL.png"></a>
+            <a href=""><img class="dot-badge" src="Images/LaLiga.png"></a>
+            <a href=""><img class="dot-badge" src="Images/Bundesliga.png"></a>
+            <a href=""><img class="dot-badge" src="Images/SerieA.png"></a>
+            <a href=""><img class="dot-badge" src="Images/Ligue1.png"></a>
+            <a href=""><img class="dot-badge" src="Images/LigaPortugal.png"></a>
+        </div>
+
+        <!-- Heading Section -->
+
+        <div class="heading-container">
+            <div id="title">
+                <h1>Football</h1>
+            </div>
+            <div id="content">
+                <img src="Images/EPL.png">
+                <h2>English Premier League</h2>
+            </div>
+        </div>
+
+        <!-- Main Section -->
+
+        <div class="main-container">
+            <div class="fixtures-container">
+                <h2>Gameweek 6 Fixtures</h2>
+                <table id="fixtures">
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Brentford</td>
+                        <td>3-1</td>
+                        <td>Manchester Utd</td>
+                        <td>12&colon;30</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Cheslea</td>
+                        <td>1-3</td>
+                        <td>Brighton</td>
+                        <td>15&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Crystal Palace</td>
+                        <td>2-1</td>
+                        <td>Liverpool</td>
+                        <td>15&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Leeds</td>
+                        <td>2-2</td>
+                        <td>Bournemouth</td>
+                        <td>15&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Manchester City</td>
+                        <td>5-1</td>
+                        <td>Burnley</td>
+                        <td>15&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Nottingham Forest</td>
+                        <td>0-1</td>
+                        <td>Sunderland</td>
+                        <td>17&colon;30</td>
+                    </tr>
+                    <tr>
+                        <td>27.09.25</td>
+                        <td>Tottenham</td>
+                        <td>vs</td>
+                        <td>Wolves</td>
+                        <td>20&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>28.09.25</td>
+                        <td>Aston Villa</td>
+                        <td>vs</td>
+                        <td>Fulham</td>
+                        <td>14&colon;00</td>
+                    </tr>
+                    <tr>
+                        <td>28.09.25</td>
+                        <td>Newcastle</td>
+                        <td>vs</td>
+                        <td>Arsenal</td>
+                        <td>16&colon;30</td>
+                    </tr>
+                    <tr>
+                        <td>29.09.25</td>
+                        <td>Everton</td>
+                        <td>vs</td>
+                        <td>West Ham</td>
+                        <td>20&colon;00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="leaguetable-container">
+                <h2>League Table</h2>
+                <table id="league">
+                    <tr>
+                        <th>#</th>
+                        <th>Team</th>
+                        <th>Played</th>
+                        <th>Won</th>
+                        <th>Drawn</th>
+                        <th>Lost</th>
+                        <th>GD</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Liverpool</td>
+                        <td>6</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Crystal Palace</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Sunderland</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bournemouth</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Manchester City</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Arsenal</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Tottenham</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>7</td>
+                        <td>10</td>
+                    </tr>
+                     <tr>
+                        <td>8</td>
+                        <td>Chelsea</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>8</td>
+                    </tr>
+                     <tr>
+                        <td>9</td>
+                        <td>Fulham</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>8</td>
+                    </tr>
+                     <tr>
+                        <td>10</td>
+                        <td>Brighton</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>8</td>
+                    </tr>
+                     <tr>
+                        <td>11</td>
+                        <td>Leeds</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>-3</td>
+                        <td>8</td>
+                    </tr>
+                     <tr>
+                        <td>12</td>
+                        <td>Everton</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>7</td>
+                    </tr>
+                     <tr>
+                        <td>13</td>
+                        <td>Brentford</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>-2</td>
+                        <td>7</td>
+                    </tr>
+                     <tr>
+                        <td>14</td>
+                        <td>Manchester Utd</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>-4</td>
+                        <td>7</td>
+                    </tr>
+                     <tr>
+                        <td>15</td>
+                        <td>Newcastle</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>6</td>
+                    </tr>
+                     <tr>
+                        <td>16</td>
+                        <td>Nottingham Forest</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>-5</td>
+                        <td>5</td>
+                    </tr>
+                     <tr>
+                        <td>17</td>
+                        <td>Burnley</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>-7</td>
+                        <td>4</td>
+                    </tr>
+                     <tr>
+                        <td>18</td>
+                        <td>Aston Villa</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>-4</td>
+                        <td>3</td>
+                    </tr>
+                     <tr>
+                        <td>19</td>
+                        <td>West Ham</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>-8</td>
+                        <td>3</td>
+                    </tr>
+                     <tr>
+                        <td>20</td>
+                        <td>Wolves</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>-9</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+
+        <section class="bottom-section-container">
+            <div class="signupform">
+                <form>
+                    <h2>Sign up for our newsletter!</h2>
+                    <div class="form">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="fname" required>
+                    </div>
+                    <div class="form">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                    <div class="form">
+                        <label for="email">E&hyphen;Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form">
+                        <label for="mobile">Contact Number</label>
+                        <input type="number" id="mobile" name="mobile" required>
+                    </div>
+                    <div>
+                        <label for="checkbox">Do you consent to recieveing weekly upadtes?</label>
+                        <input type="checkbox" id="checkbox" value="checkbox">
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="iframe">
+                <iframe width="500vw" height="300vh" src="https://www.youtube.com/embed/7VixzcGXxno?si=xZDLbhhV_HZLGOPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+
+        <footer class="footer-container">
+            <p>&copy; MS sports 2025</p>
+        </footer>
+    </body>
+</html>
